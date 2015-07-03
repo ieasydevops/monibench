@@ -1,0 +1,547 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.tycs.monibench.metis</groupId>
+	<artifactId>metis</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>metis</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.7</java.version>
+		<jsp.version>2.2</jsp.version>
+		<jstl.version>1.2</jstl.version>
+		<servlet.version>3.0</servlet.version>
+		<org-springframework.version>4.1.4.RELEASE</org-springframework.version>
+		<org-spring-mvc.version>4.1.4.RELEASE</org-spring-mvc.version>
+		<fastjson.version>1.1.39</fastjson.version>
+		<logback.version>1.0.13</logback.version>
+		<slf4j.version>1.7.12</slf4j.version>
+		<commons-io.version>2.4</commons-io.version>
+		<commons-lang3.version>3.4</commons-lang3.version>
+		<commons-codec.version>1.8</commons-codec.version>
+		<commons-beanutils.version>1.8.3</commons-beanutils.version>
+		<commons-httpclient.version>3.1</commons-httpclient.version>
+		<commons-fileupload.version>1.3</commons-fileupload.version>
+		<junit.version>4.12</junit.version>
+		<maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
+		<tddl.version>3.1.0.1-b2b</tddl.version>
+		<log4j.version>1.2.17</log4j.version>
+		<slf4j.version>1.7.5</slf4j.version>
+		<slf4j-api.version>1.7.7</slf4j-api.version>
+		<quartz.version>2.1.5</quartz.version>
+
+		<mybatis.version>3.2.8</mybatis.version>
+		<mybatis-spring.version>1.2.2</mybatis-spring.version>
+		<aspectj.version>1.8.2</aspectj.version>
+		<jaxb-api.version>2.2.11</jaxb-api.version>
+		<org.springframework.version>3.2.12.RELEASE</org.springframework.version>
+		<icu4j.version>54.1</icu4j.version>
+		<buc.client.version>0.6</buc.client.version>
+
+		<httpclient.version>3.1</httpclient.version>
+		<zip4j.version>1.3.2</zip4j.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!--子项目 -->
+
+			<dependency>
+				<groupId>com.tycs.metis</groupId>
+				<artifactId>meissa-rule-config</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba.meissa</groupId>
+				<artifactId>meissa-rule-dao</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba.platform.shared</groupId>
+				<artifactId>buc.sso.client</artifactId>
+				<version>${buc.client.version}</version>
+			</dependency>
+
+
+
+			<dependency>
+				<groupId>com.alibaba.meissa</groupId>
+				<artifactId>meissa-resource</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba.meissa</groupId>
+				<artifactId>meissa-rule-run</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba.meissa</groupId>
+				<artifactId>meissa-rule-dev</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba.meissa</groupId>
+				<artifactId>meissa-rule-run</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>net.lingala.zip4j</groupId>
+				<artifactId>zip4j</artifactId>
+				<version>${zip4j.version}</version>
+			</dependency>
+
+
+
+			<dependency>
+				<groupId>com.ibm.icu</groupId>
+				<artifactId>icu4j</artifactId>
+				<version>${icu4j.version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang3.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.quartz-scheduler</groupId>
+				<artifactId>quartz</artifactId>
+				<version>${quartz.version}</version>
+			</dependency>
+
+			<!-- json parser -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+
+			<!-- Other Web dependencies -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>${jstl.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>${servlet.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet.jsp</groupId>
+				<artifactId>jsp-api</artifactId>
+				<version>${jsp.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- Spring and Transactions -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${org-springframework.version}</version>
+			</dependency>
+
+
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${org-springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${org-springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${org-springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-expression</artifactId>
+				<version>${org-springframework.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-httpclient</groupId>
+				<artifactId>commons-httpclient</artifactId>
+				<version>${httpclient.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${org-springframework.version}</version>
+				<exclusions>
+					<!-- Exclude Commons Logging in favor of SLF4j -->
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${org-springframework.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${org-springframework.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${org-springframework.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${org-springframework.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>1.2.3.RELEASE</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${org-springframework.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aspects</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+			<!-- AspectJ -->
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+
+			<!-- Spring MVC -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${org-spring-mvc.version}</version>
+			</dependency>
+
+
+			<!-- Logging with SLF4J & log4j -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+				<scope>compile</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+
+			<!-- JSR 303 with Hibernate Validator -->
+			<dependency>
+				<groupId>javax.validation</groupId>
+				<artifactId>validation-api</artifactId>
+				<version>1.0.0.GA</version>
+			</dependency>
+
+			<!-- http -->
+			<dependency>
+				<groupId>apache-httpclient</groupId>
+				<artifactId>commons-httpclient</artifactId>
+				<version>3.1</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>2.6</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>javax.xml.bind</groupId>
+				<artifactId>jaxb-api</artifactId>
+				<version>${jaxb-api.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+
+			<!-- mybatis -->
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>3.2.3</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>1.2.1</version>
+			</dependency>
+
+
+			<!-- mysql -->
+			<dependency>
+				<groupId>com.alibaba.platform.shared</groupId>
+				<artifactId>druid</artifactId>
+				<version>1.0.10</version>
+			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.32</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.velocity</groupId>
+				<artifactId>velocity</artifactId>
+				<version>1.7</version>
+			</dependency>
+
+			<dependency>
+				<groupId>velocity-tools</groupId>
+				<artifactId>velocity-tools-view</artifactId>
+				<version>1.4</version>
+			</dependency>
+
+
+			<!-- tddl -->
+
+			<dependency>
+				<groupId>com.taobao.tddl</groupId>
+				<artifactId>tddl-client</artifactId>
+				<version>3.1.0.1-b2b</version>
+				<exclusions>
+					<exclusion>
+						<groupId>com.alibaba.external</groupId>
+						<artifactId>sourceforge.spring.modules.core</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.alibaba.external</groupId>
+						<artifactId>sourceforge.spring.modules.context</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.alibaba.external</groupId>
+						<artifactId>sourceforge.spring.modules.jdbc</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.alibaba.external</groupId>
+						<artifactId>sourceforge.spring.modules.orm</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>jboss</groupId>
+						<artifactId>jboss-j2ee</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>xml-apis</groupId>
+						<artifactId>xml-apis</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>xerces</groupId>
+						<artifactId>xmlParserAPIs</artifactId>
+					</exclusion>
+					<!--下面xerces干扰webx3的解析 -->
+					<exclusion>
+						<groupId>xerces</groupId>
+						<artifactId>xercesImpl</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.alibaba.external</groupId>
+						<artifactId>log4j</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.slf4j</groupId>
+						<artifactId>lf4j-log4j12</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>log4j</groupId>
+						<artifactId>log4j</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.alibaba.external</groupId>
+						<artifactId>org.slf4j.log4j12</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.alibaba</groupId>
+						<artifactId>druid</artifactId>
+					</exclusion>
+					<!-- 以下是无影响的重复性排除 -->
+					<exclusion>
+						<groupId>com.alibaba.external</groupId>
+						<artifactId>jakarta.commons.logging</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.alibaba.external</groupId>
+						<artifactId>xml.dom4j</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.alibaba.external</groupId>
+						<artifactId>jakarta.bcel</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.alibaba.external</groupId>
+						<artifactId>codehaus.groovy</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.alibaba.external</groupId>
+						<artifactId>com.taobao.monitor.common</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.alibaba.external</groupId>
+						<artifactId>jakarta.commons.beanutils</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.alibaba.external</groupId>
+						<artifactId>jakarta.commons.lang</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.alibaba.external</groupId>
+						<artifactId>xml.apis</artifactId>
+					</exclusion>
+					<!-- <exclusion> <artifactId>diamond-client</artifactId> <groupId>com.taobao.diamond</groupId> 
+						</exclusion> -->
+				</exclusions>
+			</dependency>
+
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>18.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.python</groupId>
+				<artifactId>jython-standalone</artifactId>
+				<version>2.5.3</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>${commons-codec.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>${commons-beanutils.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>${commons-fileupload.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-digester</groupId>
+				<artifactId>commons-digester</artifactId>
+				<version>2.1</version>
+			</dependency>
+		</dependencies>
+
+
+
+
+
+	</dependencyManagement>
+
+	<build>
+		<finalName>${project.name}</finalName>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<finalName>meissa-v1</finalName>
+					<descriptors>
+						<descriptor>assembly.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<includes>
+						<include>**/*Test.java</include>
+					</includes>
+					<excludes>
+						<exclude>**/dao/**/*.java</exclude>
+						<exclude>**/*BaseTestCase.java</exclude>
+						<!-- exclude>%regex[.*[DAO|Base].*Test.java]</exclude -->
+					</excludes>
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<modules>
+		<module>meissa-resource</module>
+		<module>meissa-rule-dev</module>
+		<module>meissa-rule-run</module>
+		<module>meissa-rule-dao</module>
+		<module>meissa-rule-config</module>
+		<module>metis-web</module>
+		<module>metis-rule</module>
+		<module>metis-resource</module>
+		<module>metis-common</module>
+		<module>metis-dao</module>
+	</modules>
+</project>
